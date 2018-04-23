@@ -31,12 +31,18 @@ data class Ticker(
 ) {
     fun lastTradePrice(): String {
         val lastTradePriceDouble = lastTradePrice.toDouble()
-        return if (lastTradePriceDouble < 1) {
-            String.format("%.6f", lastTradePriceDouble)
-        } else {
+        return if (lastTradePriceDouble == 0.0 || lastTradePriceDouble >= 1) {
             String.format("%.2f", lastTradePriceDouble)
+        } else {
+            String.format("%.6f", lastTradePriceDouble)
         }
     }
 
-    fun changeRate(): String = String.format("%.2f%%", (lastTradePrice.toDouble() - open24h.toDouble()) / open24h.toDouble() * 100)
+    fun changeRate(): String {
+        return if (open24h.toDouble() == 0.0) {
+            "0.00%"
+        } else {
+            String.format("%.2f%%", (lastTradePrice.toDouble() - open24h.toDouble()) / open24h.toDouble() * 100)
+        }
+    }
 }
