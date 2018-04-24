@@ -3,4 +3,7 @@
     <string name="pairs">Pairs</string>
     <string name="last_trade_price">Last Trade Price</string>
     <string name="change">24h Change</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="connection_failed">Connection failed</string>
 </resources>

@@ -4,4 +4,7 @@
     <string name="pairs">交易對</string>
     <string name="last_trade_price">最新交易價</string>
     <string name="change">24小時漲跌</string>
+    <string name="list">列表</string>
+    <string name="grid">格狀</string>
+    <string name="connection_failed">無法連線</string>
 </resources>
