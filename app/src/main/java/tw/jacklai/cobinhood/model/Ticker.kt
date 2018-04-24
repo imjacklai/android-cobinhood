@@ -38,11 +38,11 @@ data class Ticker(
         }
     }
 
-    fun changeRate(): String {
+    fun changeRate(): Double {
         return if (open24h.toDouble() == 0.0) {
-            "0.00%"
+            0.0
         } else {
-            String.format("%.2f%%", (lastTradePrice.toDouble() - open24h.toDouble()) / open24h.toDouble() * 100)
+            (lastTradePrice.toDouble() - open24h.toDouble()) / open24h.toDouble() * 100
         }
     }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
 import tw.jacklai.cobinhood.R
 import tw.jacklai.cobinhood.model.Ticker
@@ -27,8 +26,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
 
         mainAdapter = MainAdapter()
-
-        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.adapter = mainAdapter
 
         presenter.attachView(this)

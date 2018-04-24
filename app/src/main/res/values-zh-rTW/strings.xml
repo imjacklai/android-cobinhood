@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cobinhood</string>
+    <string name="pairs">交易對</string>
+    <string name="last_trade_price">最新交易價</string>
+    <string name="change">24小時漲跌</string>
+</resources>

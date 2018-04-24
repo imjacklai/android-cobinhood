@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Cobinhood</string>
+    <string name="pairs">Pairs</string>
+    <string name="last_trade_price">Last Trade Price</string>
+    <string name="change">24h Change</string>
 </resources>
