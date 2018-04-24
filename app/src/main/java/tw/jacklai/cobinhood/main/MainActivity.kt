@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private val presenter by lazy { MainPresenter(cobinhoodService) }
     private var currentViewType = ViewType.LIST
     private lateinit var mainAdapter: MainAdapter
+    private var snackbar: Snackbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +80,13 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun showConnectionFailed() {
         refreshLayout.isRefreshing = false
-        Snackbar.make(coordinatorLayout, getString(R.string.connection_failed), Snackbar.LENGTH_SHORT).show()
+
+        if (snackbar == null) {
+            snackbar = Snackbar
+                    .make(coordinatorLayout, getString(R.string.connection_failed), Snackbar.LENGTH_INDEFINITE)
+                    .setAction(getString(R.string.retry), { getTickers() })
+        }
+        snackbar?.show()
     }
 
     private fun setRecyclerViewLayoutManager(viewType: ViewType) {
